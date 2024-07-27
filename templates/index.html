@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breast Cancer Risk Assessment</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+    <div class="container">
+        <h1>Breast Cancer Risk Assessment</h1>
+        <div id="questionnaire">
+            <div class="question" id="question1">
+                <p>What is your age?</p>
+                <input type="number" id="age">
+                <button onclick="nextQuestion()">Next</button>
+            </div>
+            <div class="question" id="question2" style="display: none;">
+                <p>Have you noticed any changes in your breast shape or size?</p>
+                <button onclick="nextQuestion('yes')">Yes</button>
+                <button onclick="nextQuestion('no')">No</button>
+            </div>
+            <div class="question" id="question3" style="display: none;">
+                <p>Do you have a family history of breast cancer?</p>
+                <button onclick="nextQuestion('yes')">Yes</button>
+                <button onclick="nextQuestion('no')">No</button>
+            </div>
+            <div class="question" id="question4" style="display: none;">
+                <p>Have you experienced any nipple discharge or pain?</p>
+                <button onclick="nextQuestion('yes')">Yes</button>
+                <button onclick="nextQuestion('no')">No</button>
+            </div>
+            <div class="question" id="question5" style="display: none;">
+                <p>Have you noticed any lumps or thickening in your breast?</p>
+                <button onclick="nextQuestion('yes')">Yes</button>
+                <button onclick="nextQuestion('no')">No</button>
+            </div>
+            <div class="question" id="question6" style="display: none;">
+                <p>Have you had a previous breast biopsy or surgery?</p>
+                <button onclick="nextQuestion('yes')">Yes</button>
+                <button onclick="nextQuestion('no')">No</button>
+            </div>
+            <div class="question" id="question7" style="display: none;">
+                <p>Do you have a history of radiation therapy?</p>
+                <button onclick="nextQuestion('yes')">Yes</button>
+                <button onclick="nextQuestion('no')">No</button>
+            </div>
+            <div class="question" id="question8" style="display: none;">
+                <p>Have you experienced any weight loss or fatigue recently?</p>
+                <button onclick="nextQuestion('yes')">Yes</button>
+                <button onclick="nextQuestion('no')">No</button>
+            </div>
+            <div class="question" id="question9" style="display: none;">
+                <p>Do you have any skin changes or redness on your breast?</p>
+                <button onclick="nextQuestion('yes')">Yes</button>
+                <button onclick="nextQuestion('no')">No</button>
+            </div>
+            <div class="question" id="question10" style="display: none;">
+                <p>Have you noticed any swelling or pain in your armpit?</p>
+                <button onclick="nextQuestion('yes')">Yes</button>
+                <button onclick="nextQuestion('no')">No</button>
+            </div>
+            <div class="question" id="question11" style="display: none;">
+                <p>Have you had any hormonal therapy or oral contraceptives?</p>
+                <button onclick="nextQuestion('yes')">Yes</button>
+                <button onclick="nextQuestion('no')">No</button>
+            </div>
+            <div class="question" id="question12" style="display: none;">
+                <p>Have you ever had a mammogram or breast ultrasound?</p>
+                <button onclick="nextQuestion('yes')">Yes</button>
+                <button onclick="nextQuestion('no')">No</button>
+            </div>
+            <a href="/predict-cancer" class="button">Assess Breast Cancer</a>
+            <div id="result" class="result" style="display: none;"></div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

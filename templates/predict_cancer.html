@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breast Cancer Prediction</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='c.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Breast Cancer Prediction</h1>
+        <p>Enter the following details to assess breast cancer:</p>
+        <form id="predictionForm">
+            <label for="features">Features (30 values, separated by commas):</label>
+            <input type="text" id="features" name="features" required><br><br>
+            <input type="submit" value="Get Prediction">
+        </form>
+
+        <!-- Result display box -->
+        <div id="resultBox">
+            <h2 id="result"></h2>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
